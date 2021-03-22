@@ -1,4 +1,4 @@
-/*ubunt 自带的内核timer_list不一致，所以无法运行*/
+/*ubuntu 自带的内核timer_list不一致，所以无法运行*/
 #include <linux/debugfs.h>
 #include <linux/device.h>
 #include <linux/module.h>
