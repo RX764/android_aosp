@@ -1,0 +1,22 @@
+tasklet用法框架
+
+/* 定义 taselet */
+struct tasklet_struct testtasklet;
+/* tasklet 处理函数 */
+void testtasklet_func(unsigned long data)
+{
+/* tasklet 具体处理内容 */
+}
+/* 中断处理函数 */
+irqreturn_t test_handler(int irq, void *dev_id)
+{
+......
+/* 调度 tasklet */
+tasklet_schedule(&testtasklet);
+......
+}
+/* 驱动入口函数 */
+static int __init xxxx_init(void)
+{
+......
+/* 初始化 tasklet */

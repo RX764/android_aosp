@@ -1,0 +1,25 @@
+/* 定义工作(work) */
+struct work_struct testwork;
+/* work 处理函数 */
+void testwork_func_t(struct work_struct *work);
+{
+/* work 具体处理内容 */
+}
+/* 中断处理函数 */
+irqreturn_t test_handler(int irq, void *dev_id)
+{
+......
+/* 调度 work */
+schedule_work(&testwork);
+......
+}
+/* 驱动入口函数 */
+static int __init xxxx_init(void)
+{
+......
+/* 初始化 work */
+INIT_WORK(&testwork, testwork_func_t);
+/* 注册中断处理函数 */
+request_irq(xxx_irq, test_handler, 0, "xxx", &xxx_dev);
+......
+}
